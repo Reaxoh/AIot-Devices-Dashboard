@@ -9,7 +9,7 @@ const firestore         = require('./myModules/DHT11Firebase-master/dht11firebas
 const serviceAccount    = require("./myModules/key/serviceAccountKey.json");
 const myFirestore       = new firestore(serviceAccount);
 
-const port      = process.env.PORT || 3000;
+const port      = process.env.PORT || 80;
 
 let nowDHT11Data = {
     Name:  "DHT11NowData",
