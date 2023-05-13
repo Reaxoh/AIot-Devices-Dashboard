@@ -37,7 +37,7 @@ appGetByFile("/home/main3",     "/home/main3.js",     "javascript");
 
 function appGetByFile(getPath, filePath, headType) {
     app.get(getPath, (req, res) => {
-        const pblicDirectory = path.join(process.cwd(), 'pblic');
+        const pblicDirectory = path.join(process.cwd(), 'public');
 
         const data      = fs.readFileSync(pblicDirectory + filePath, "utf8");
         const bufferLen = Buffer.byteLength(data, 'utf8');
