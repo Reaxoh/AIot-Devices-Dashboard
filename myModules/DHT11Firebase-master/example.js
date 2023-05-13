@@ -7,10 +7,10 @@ const bodyParser        = require('body-parser');                               
 const jsonParser        = bodyParser.json();                                        // create application/json parser
 
 const firestore         = require('./dht11firebase.js').Firestore;                      // require Firestore (自製外部 class)
-const serviceAccount    = require("./serviceAccountKey.json");
+const serviceAccount    = require("../key/serviceAccountKey.json");
 const myFirestore       = new firestore(serviceAccount);                            // 初始化 Firestore 物件
 
-const port              = process.env.PORT || 80;                                   // 設定 Heroku port 本機做測試時 port 改為 80
+const port              = process.env.PORT || 3000;                                   // 設定 Heroku port 本機做測試時 port 改為 80
 
 appGetByFile("/",       "./html/index.html");
 appGetByFile("/main",   "./html/main.js", "javascript");

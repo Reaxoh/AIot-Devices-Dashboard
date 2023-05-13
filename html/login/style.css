@@ -1,5 +1,14 @@
+html, body {
+    width: 110vw;
+    height: 110vh;
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-image: url("https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 

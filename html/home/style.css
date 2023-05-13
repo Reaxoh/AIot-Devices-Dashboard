@@ -2,8 +2,11 @@ div {
     user-select: none;
 }
 
+
 body {
     background-image: url("https://images.pexels.com/photos/6238614/pexels-photo-6238614.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=450&w=756");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -106,38 +109,11 @@ body {
     width: 10px;
 }
 
-.row4-col2-card1-row1 {
+.row4-col2-card1-row1, .row4-col2-card1-row3, .row4-col4-card1-row1, .row4-col4-card1-row3, .row4-col6-card1-row1, .row4-col6-card1-row3 {
     height: 80px;
 }
 
-.row4-col2-card1-row2 {
+.row4-col2-card1-row2, .row4-col4-card1-row2, .row4-col6-card1-row2 {
     text-align: center;
 }
 
-.row4-col2-card1-row3 {
-    height: 80px;
-}
-
-.row4-col4-card1-row1 {
-    height: 80px;
-}
-
-.row4-col4-card1-row2 {
-    text-align: center;
-}
-
-.row4-col4-card1-row3 {
-    height: 80px;
-}
-
-.row4-col6-card1-row1 {
-    height: 80px;
-}
-
-.row4-col6-card1-row2 {
-    text-align: center;
-}
-
-.row4-col6-card1-row3 {
-    height: 80px;
-}
