@@ -9,7 +9,7 @@ const firestore         = require('./myModules/DHT11Firebase-master/dht11firebas
 const serviceAccount    = require("./myModules/key/serviceAccountKey.json");
 const myFirestore       = new firestore(serviceAccount);
 
-const port      = process.env.PORT || 80;
+const port      = process.env.PORT || 3000;
 
 let nowDHT11Data = {
     Name:  "DHT11NowData",
@@ -22,16 +22,16 @@ let nowDHT11Data = {
     Hun:      50
 };
 
-appGetByFile("/",               "./html/login/index.html",  "html"      );
-appGetByFile("/login/style",    "./html/login/style.css",   "css"       );
-appGetByFile("/login/main",     "./html/login/main.js",     "javascript");
+appGetByFile("/",               "./public/login/index.html",  "html"      );
+appGetByFile("/login/style",    "./public/login/style.css",   "css"       );
+appGetByFile("/login/main",     "./public/login/main.js",     "javascript");
 
-appGetByFile("/home",           "./html/home/index.html",   "html"      );
-appGetByFile("/home/style",     "./html/home/style.css",    "css"       );
-appGetByFile("/home/main",      "./html/home/main.js",      "javascript");
-appGetByFile("/home/main1",     "./html/home/main1.js",     "javascript");
-appGetByFile("/home/main2",     "./html/home/main2.js",     "javascript");
-appGetByFile("/home/main3",     "./html/home/main3.js",     "javascript");
+appGetByFile("/home",           "./public/home/index.html",   "html"      );
+appGetByFile("/home/style",     "./public/home/style.css",    "css"       );
+appGetByFile("/home/main",      "./public/home/main.js",      "javascript");
+appGetByFile("/home/main1",     "./public/home/main1.js",     "javascript");
+appGetByFile("/home/main2",     "./public/home/main2.js",     "javascript");
+appGetByFile("/home/main3",     "./public/home/main3.js",     "javascript");
 
 function appGetByFile(getPath, filePath, headType) {
     app.get(getPath, (req, res) => {
