@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express           = require("express");
 const app               = express();
 const fs                = require('fs');
@@ -11,8 +13,6 @@ const myFirestore       = new firestore(serviceAccount);
 
 const port      = process.env.PORT || 3000;
 
-path.join(process.cwd(), 'public');
-
 let nowDHT11Data = {
     Name:  "DHT11NowData",
     Year:   2021,
@@ -24,20 +24,22 @@ let nowDHT11Data = {
     Hun:      50
 };
 
-appGetByFile("/",               "./public/login/index.html",  "html"      );
-appGetByFile("/login/style",    "./public/login/style.css",   "css"       );
-appGetByFile("/login/main",     "./public/login/main.js",     "javascript");
+appGetByFile("/",               "/public/login/index.html",  "html"      );
+appGetByFile("/login/style",    "/public/login/style.css",   "css"       );
+appGetByFile("/login/main",     "/public/login/main.js",     "javascript");
 
-appGetByFile("/home",           "./public/home/index.html",   "html"      );
-appGetByFile("/home/style",     "./public/home/style.css",    "css"       );
-appGetByFile("/home/main",      "./public/home/main.js",      "javascript");
-appGetByFile("/home/main1",     "./public/home/main1.js",     "javascript");
-appGetByFile("/home/main2",     "./public/home/main2.js",     "javascript");
-appGetByFile("/home/main3",     "./public/home/main3.js",     "javascript");
+appGetByFile("/home",           "/public/home/index.html",   "html"      );
+appGetByFile("/home/style",     "/public/home/style.css",    "css"       );
+appGetByFile("/home/main",      "/public/home/main.js",      "javascript");
+appGetByFile("/home/main1",     "/public/home/main1.js",     "javascript");
+appGetByFile("/home/main2",     "/public/home/main2.js",     "javascript");
+appGetByFile("/home/main3",     "/public/home/main3.js",     "javascript");
 
 function appGetByFile(getPath, filePath, headType) {
     app.get(getPath, (req, res) => {
-        const data      = fs.readFileSync(filePath, "utf8");
+        const pblicDirectory = path.join(process.cwd(), 'pblic');
+
+        const data      = fs.readFileSync(pblicDirectory + filePath, "utf8");
         const bufferLen = Buffer.byteLength(data, 'utf8');
 
         let myHead      = {
