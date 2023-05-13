@@ -11,6 +11,8 @@ const myFirestore       = new firestore(serviceAccount);
 
 const port      = process.env.PORT || 3000;
 
+path.join(process.cwd(), 'public');
+
 let nowDHT11Data = {
     Name:  "DHT11NowData",
     Year:   2021,
