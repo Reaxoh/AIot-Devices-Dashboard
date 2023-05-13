@@ -24,16 +24,16 @@ let nowDHT11Data = {
     Hun:      50
 };
 
-appGetByFile("/",               "/public/login/index.html",  "html"      );
-appGetByFile("/login/style",    "/public/login/style.css",   "css"       );
-appGetByFile("/login/main",     "/public/login/main.js",     "javascript");
+appGetByFile("/",               "/login/index.html",  "html"      );
+appGetByFile("/login/style",    "/login/style.css",   "css"       );
+appGetByFile("/login/main",     "/login/main.js",     "javascript");
 
-appGetByFile("/home",           "/public/home/index.html",   "html"      );
-appGetByFile("/home/style",     "/public/home/style.css",    "css"       );
-appGetByFile("/home/main",      "/public/home/main.js",      "javascript");
-appGetByFile("/home/main1",     "/public/home/main1.js",     "javascript");
-appGetByFile("/home/main2",     "/public/home/main2.js",     "javascript");
-appGetByFile("/home/main3",     "/public/home/main3.js",     "javascript");
+appGetByFile("/home",           "/home/index.html",   "html"      );
+appGetByFile("/home/style",     "/home/style.css",    "css"       );
+appGetByFile("/home/main",      "/home/main.js",      "javascript");
+appGetByFile("/home/main1",     "/home/main1.js",     "javascript");
+appGetByFile("/home/main2",     "/home/main2.js",     "javascript");
+appGetByFile("/home/main3",     "/home/main3.js",     "javascript");
 
 function appGetByFile(getPath, filePath, headType) {
     app.get(getPath, (req, res) => {
