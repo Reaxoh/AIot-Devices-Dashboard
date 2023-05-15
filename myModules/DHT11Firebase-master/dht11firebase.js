@@ -36,10 +36,14 @@ class Firestore {
         }
 
         try {
+            const snapshot2  = await this.db.collection('Users').where('Id', '==', _json.Id).get();
+            if(snapshot2.empty)
+                return getReturnData("CHECK_ID_PASSWD", "ERROR", "ID_OR_PASSWD_ERROR");
+
             const snapshot  = await this.db.collection('Users').where('Id', '==', _json.Id).where('Passwd', '==', _json.Passwd).get();
 
             if(snapshot.empty)
-                return getReturnData("CHECK_ID_PASSWD", "ERROR", "ID_OR_PASSWD_ERROR");
+                return getReturnData("CHECK_ID_PASSWD", "ERROR", "PASSWD_ERROR");
 
             let returnData = getReturnData("CHECK_ID_PASSWD", "OK", NaN);
             snapshot.forEach(doc => {

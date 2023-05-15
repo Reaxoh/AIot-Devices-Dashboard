@@ -84,7 +84,10 @@ function checkIdPasswd(reqJson) {
             if(resJson["Error"] == null) {
                 window.location.href = "/home";
             } else {
-                showErrorText(true, "帳號或密碼錯誤");
+                if(resJson["Error"] == "PASSWD_ERROR")
+                    showErrorText(true, "密碼錯誤");
+                else
+                    showErrorText(true, "帳號或密碼錯誤");
             }
         }catch (e) {
                 showErrorText(true, "伺服器錯誤");
